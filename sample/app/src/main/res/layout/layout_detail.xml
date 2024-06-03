@@ -23,6 +23,12 @@
             android:onClick="export"
             />
 
+        <org.libpag.PAGView
+            android:id="@+id/pag_view"
+            android:layout_width="640px"
+            android:layout_height="773px"/>
+
+
     </RelativeLayout>
 
 

@@ -69,9 +69,21 @@ public class APIsDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_detail);
         exportButton = (Button)findViewById(R.id.export);
+        final PAGView pagView2 = findViewById(R.id.pag_view);
+        load(pagView2);
+
         exportButton.setVisibility(View.INVISIBLE);
+
         initPAGView();
     }
+
+    private void load(PAGView pagView){
+        PAGComposition composition = PAGFile.Load(getAssets(), "palm_guide.pag");
+        pagView.setRepeatCount(-1);
+        pagView.setComposition(composition);
+        pagView.play();
+    }
+
 
     private void initPAGView() {
         RelativeLayout backgroundView = findViewById(R.id.background_view);
